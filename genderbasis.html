@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./genderbasis.css">
+    <link rel="icon" href="./favicon.ico" type="image/jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Gender Polling Form</title>
+</head>
+<body>
+    <div class="box"></div>
+    <h1 id="p2">Gender Polling Form</h1>
+    <form id="p1">
+        <div>
+            <div class="question-title">Tell us about your gender:</div>
+            <label>
+                <input type="radio" name="gender" value="Male"> Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="Female"> Female
+            </label>
+            <label>
+                <input type="radio" name="gender" value="Prefer not to say"> Prefer not to say
+            </label>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        // Add event listener to handle form submission
+        document.getElementById("p1").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            // Get selected radio button for gender
+            const selectedGender = document.querySelector('input[name="gender"]:checked');
+            
+            // Check if a gender is selected
+            if (selectedGender) {
+                // Save the selected gender in localStorage
+                localStorage.setItem("gender", selectedGender.value);
+                
+                // Optional: Show a confirmation message to the user
+                alert("Your gender selection has been saved.");
+            } else {
+                // If no selection was made, alert the user
+                alert("Please select a gender.");
+            }
+        });
+
+        // On page load, check if there's a saved gender in localStorage
+        window.addEventListener('load', function() {
+            const savedGender = localStorage.getItem("gender");
+
+            if (savedGender) {
+                // If gender is saved, pre-select the corresponding radio button
+                document.querySelector(`input[name="gender"][value="${savedGender}"]`).checked = true;
+            }
+        });
+    </script>
+</body>
+</html>
