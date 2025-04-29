@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audience Attribute Form</title>
+    <link rel="stylesheet" href="./attribute.css">
+    <link rel="icon" href="./favicon.ico" type="image/jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <div class="form-container">
+        <h1>Audience Attribute Form</h1>
+        <form>
+            <div>
+                <div class="question-title">1. What is the most important attribute to your audience?</div>
+                <label>
+                    <input type="radio" name="attribute1" value="Quality"> Quality
+                </label>
+                <label>
+                    <input type="radio" name="attribute1" value="Price"> Price
+                </label>
+                <label>
+                    <input type="radio" name="attribute1" value="Customer Service"> Customer Service
+                </label>
+            </div>
+            <br>
+            <div>
+                <div class="question-title">2. What is the second most important attribute to your audience?</div>
+                <label>
+                    <input type="radio" name="attribute2" value="Quality"> Quality
+                </label>
+                <label>
+                    <input type="radio" name="attribute2" value="Price"> Price
+                </label>
+                <label>
+                    <input type="radio" name="attribute2" value="Customer Service"> Customer Service
+                </label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+            
+            const attribute1 = document.querySelector('input[name="attribute1"]:checked');
+            const attribute2 = document.querySelector('input[name="attribute2"]:checked');
+            
+            if (attribute1 && attribute2) {
+                localStorage.setItem("attribute1", attribute1.value);
+                localStorage.setItem("attribute2", attribute2.value);
+                
+                alert("Your selections have been saved!");
+                
+            } else {
+                
+                alert("Please answer both questions.");
+            }
+        });
+
+      
+        window.addEventListener('load', function() {
+            const savedAttribute1 = localStorage.getItem("attribute1");
+            const savedAttribute2 = localStorage.getItem("attribute2");
+
+            if (savedAttribute1) {
+                document.querySelector(`input[name="attribute1"][value="${savedAttribute1}"]`).checked = true;
+            }
+            if (savedAttribute2) {
+                document.querySelector(`input[name="attribute2"][value="${savedAttribute2}"]`).checked = true;
+            }
+        });
+    </script>
+</body>
+</html>
