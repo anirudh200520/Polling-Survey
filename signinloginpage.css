@@ -26,7 +26,7 @@ body {
     /* background-color: #a4c4b5; */
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpejITFIo2GohafcPOsIILdZPnbqNnDnMcTA&s);
     background-size: cover;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px green;
 }
 
 .container__left img {
@@ -38,7 +38,7 @@ body {
     font-size: 2.5rem;
     font-weight: 500;
     color: white;
-    text-shadow: 0px 0px 20px black;
+    text-shadow: 0px 0px 20px green;
 }
 
 .container__left p {
