@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Template Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./teachingtemplate.css">
+    <link rel="icon" href="./favicon.ico" type="image/jpg">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Teaching Template Form</h1>
+        <form id="teachingForm">
+            <div>
+                <div class="question-title">1. What is the most effective teaching method?</div>
+                <label>
+                    <input type="radio" name="teaching1" value="Lecture"> Lecture
+                </label>
+                <label>
+                    <input type="radio" name="teaching1" value="Group Discussion"> Group Discussion
+                </label>
+                <label>
+                    <input type="radio" name="teaching1" value="Hands-on Activities"> Hands-on Activities
+                </label>
+            </div>
+            <br>
+            <div>
+                <div class="question-title">2. How do you assess student understanding?</div>
+                <label>
+                    <input type="radio" name="teaching2" value="Quizzes"> Quizzes
+                </label>
+                <label>
+                    <input type="radio" name="teaching2" value="Projects"> Projects
+                </label>
+                <label>
+                    <input type="radio" name="teaching2" value="Class Participation"> Class Participation
+                </label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+     
+        document.getElementById("teachingForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+           
+            const selectedTeaching1 = document.querySelector('input[name="teaching1"]:checked');
+            const selectedTeaching2 = document.querySelector('input[name="teaching2"]:checked');
+            
+          
+            if (selectedTeaching1 && selectedTeaching2) {
+              
+                localStorage.setItem("teaching1", selectedTeaching1.value);
+                localStorage.setItem("teaching2", selectedTeaching2.value);
+                
+             
+                alert("Your responses have been saved!");
+            } else {
+          
+                alert("Please answer both questions.");
+            }
+        });
+
+     
+        window.addEventListener('load', function() {
+            const savedTeaching1 = localStorage.getItem("teaching1");
+            const savedTeaching2 = localStorage.getItem("teaching2");
+
+            if (savedTeaching1) {
+                document.querySelector(`input[name="teaching1"][value="${savedTeaching1}"]`).checked = true;
+            }
+            if (savedTeaching2) {
+                document.querySelector(`input[name="teaching2"][value="${savedTeaching2}"]`).checked = true;
+            }
+        });
+    </script>
+</body>
+</html>
