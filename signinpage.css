@@ -1,0 +1,102 @@
+.container {
+    background-color: #747d7a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Poppins", sans-serif;
+    background-size: cover;
+    padding: 20px; 
+  }
+  
+  .signupbox {
+    border-radius: 5px;
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0px 0px 30px white;
+    text-align: center;
+    background-color:  transparent;
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+   
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px; 
+    }
+  
+    .signupbox {
+      padding: 3vh; 
+      width: 90%; 
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .signupbox {
+      max-width: 95%; 
+    }
+  }
+.fieldset{
+  height: 30vh;
+  border: 2px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.table{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  color:black ;
+}
+tr{
+  line-height: 3rem;
+}
+input{
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: transform 1s ease;
+  margin-left: 0.5rem;
+  width: 12rem;
+}
+.btn{
+  border: none;
+  border-radius: 20px;
+  height: 2rem;
+  background-color: transparent;
+  transition: transform 0.6s ease;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+}
+.btn:hover{
+  transform: scale(1.1);
+}
+input:hover{
+  transform: scale(1.1);
+}
+div a{
+  color: #95b4a5;
+}
