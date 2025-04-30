@@ -1,3 +1,0 @@
-﻿# Polling-Survey
-Anirudh
-Chitra
