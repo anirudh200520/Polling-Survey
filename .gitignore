@@ -3,5 +3,3 @@ repo mind changes
 *.log → Ignore all log files.
 node_modules/ → Ignore node_modules directory.
 ▪ *.env (ignore environment files). 
-
-
