@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signinloginpage.css" />
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__left">
+            <h2>Tondere</h2>
+            <p>
+                Make your first poll here.....
+            </p>
+        </div>
+        <div class="container__right">
+            <div class="content">
+                <p class="header">Welcome  to Tondere Website!!</p>
+                <form id="loginForm">
+                    <div class="input__group">
+                        <input type="email" id="email" required />
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input__group">
+                        <input type="password" id="password" minlength="3" maxlength="12" required />
+                        <label for="password">Password</label>
+                    </div>
+                    <p><a href="#">Forgot password?</a></p>
+                    <button type="submit" class="text">Sign In</button>
+                </form>
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                <div class="google__login">
+                    <img src="search.png" alt="google" />
+                    <span>Sign in with Google</span>
+                </div>
+                <p class="create__account">
+                    New Member? <a href="./signinpage.html">Create Account</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get input values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Retrieve the stored user data
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            // Check if user exists and credentials match
+            if (storedUser && storedUser.email === email && storedUser.password === password) {
+                alert('Login successful!');
+                // Redirect to dashboard or homepage
+                window.location.href = './index.html';
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

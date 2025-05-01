@@ -1,0 +1,215 @@
+ @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container__left {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /* background-color: #a4c4b5; */
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpejITFIo2GohafcPOsIILdZPnbqNnDnMcTA&s);
+    background-size: cover;
+    box-shadow: 0px 0px 10px black;
+}
+
+.container__left img {
+    width: 100%;
+    height: 100%;
+}
+
+.container__left h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+
+.container__left p {
+    text-shadow: 0px 0px 20px black;
+    max-width: 500px;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.container__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 350px;
+    display: grid;
+    gap: 1rem;
+}
+
+.logo {
+    max-width: 150px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.header {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #717775;
+    text-align: center;
+}
+
+form {
+    display: grid;
+}
+
+.input__group {
+    position: relative;
+    margin: 1rem 0;
+}
+
+form label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #717775;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+form input {
+    padding: 1rem 0;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #717775;
+}
+
+form input:focus~label {
+    top: 0;
+    font-size: 0.8rem;
+}
+
+form p {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+form p a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #a4c4b5;
+    text-decoration: none;
+}
+
+form button {
+    padding: 0.75rem 3rem;
+    max-width: fit-content;
+    margin: auto;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #717775;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #a4c4b5;
+}
+
+.divider {
+    position: relative;
+    isolation: isolate;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    margin: 2rem auto;
+}
+
+.divider::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #717775;
+    z-index: -1;
+}
+
+.divider span {
+    padding: 0 1rem;
+    color: #717775;
+    background-color: white;
+}
+
+.google__login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.google__login img {
+    max-width: 25px;
+}
+
+.google__login span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #717775;
+    transition: 0.3s;
+}
+
+.google__login:hover span {
+    color: #a4c4b5;
+}
+
+.create__account {
+    color: #717775;
+    text-align: center;
+}
+
+.create__account a {
+    color: #a4c4b5;
+}
+.text{
+    text-decoration: none;
+    color: black;
+}
+@media (width < 788px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container__left,
+    .container__right {
+        min-height: 100vh;
+    }
+}

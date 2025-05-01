@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Risk Management Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./projectriskmanagement.css">
+    <link rel="icon" href="./favicon.ico" type="image/jpg">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Project Risk Management Form</h1>
+        <form id="riskForm">
+            <div>
+                <div class="question-title">1. What is the most significant risk in this project?</div>
+                <label>
+                    <input type="radio" name="risk" value="Budget Overrun"> Budget Overrun
+                </label>
+                <label>
+                    <input type="radio" name="risk" value="Schedule Delay"> Schedule Delay
+                </label>
+                <label>
+                    <input type="radio" name="risk" value="Resource Shortage"> Resource Shortage
+                </label>
+            </div>
+            <br>
+            <div>
+                <div class="question-title">2. What is your main strategy to reduce risks?</div>
+                <label>
+                    <input type="radio" name="risk1" value="Risk Transfer"> Risk Transfer
+                </label>
+                <label>
+                    <input type="radio" name="risk1" value="Risk Avoidance"> Risk Avoidance
+                </label>
+                <label>
+                    <input type="radio" name="risk1" value="Risk Mitigation"> Risk Mitigation
+                </label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+      
+        document.getElementById("riskForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+      
+            const selectedRisk = document.querySelector('input[name="risk"]:checked');
+            const selectedRisk1 = document.querySelector('input[name="risk1"]:checked');
+            
+            if (selectedRisk && selectedRisk1) {
+              
+                localStorage.setItem("risk", selectedRisk.value);
+                localStorage.setItem("risk1", selectedRisk1.value);
+                
+                alert("Your responses have been saved!");
+            } else {
+                alert("Please answer both questions.");
+            }
+        });
+
+        
+        window.addEventListener('load', function() {
+            const savedRisk = localStorage.getItem("risk");
+            const savedRisk1 = localStorage.getItem("risk1");
+
+            if (savedRisk) {
+                document.querySelector(`input[name="risk"][value="${savedRisk}"]`).checked = true;
+            }
+            if (savedRisk1) {
+                document.querySelector(`input[name="risk1"][value="${savedRisk1}"]`).checked = true;
+            }
+        });
+    </script>
+</body>
+</html>
