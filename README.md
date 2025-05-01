@@ -6,7 +6,6 @@
 <body>
 
     Online Polling Survey Project
-
     
 
     Project Overview: This project has been developed by Chitra and Anirudh as part of their academic venture. 
